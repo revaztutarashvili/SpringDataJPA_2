@@ -8,7 +8,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID")
-    private int id;
+    private long id;
     @Column(name = "FULL NAME", nullable = false, updatable = true)
     private String name;
     @Column(name = "AGE", updatable = true)
