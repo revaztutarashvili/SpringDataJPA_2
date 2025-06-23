@@ -6,9 +6,18 @@ import jakarta.persistence.*;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID")
     private int id;
+    @Column(name = "FULL NAME", nullable = false, updatable = true)
+    private String name;
+    @Column(name = "AGE", updatable = true)
+    private int age;
+    @Column(name = "Salary", nullable = false)
+    private float salary;
 
+    @JoinColumn(name = "Restaurant ID")
+    @ManyToOne
+    private Restaurant restaurant;
 
 }
